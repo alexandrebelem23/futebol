@@ -10,7 +10,7 @@ const Cronometro: React.FC = () => {
     parseInt(localStorage.getItem("segundos") || "0")
   );
   const [ativo, setAtivo] = useState<boolean>(false);
-  const [intervalo, setIntervalo] = useState<NodeJS.Timeout | null>(null);
+  const [intervalo, setIntervalo] = useState<ReturnType<typeof setInterval> | null>(null);
 
   useEffect(() => {
     // Quando a página for recarregada, carrega o valor salvo, mas cronômetro fica pausado
